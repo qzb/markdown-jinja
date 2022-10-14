@@ -31,5 +31,5 @@ setup(
     'Topic :: Text Processing :: Filters',
     'Topic :: Text Processing :: Markup :: HTML'
   ],
-  install_requires = ['Markdown>=2.6', 'Jinja2>=2.10']
+  install_requires=['Markdown>=3.0', 'Jinja2>=2.10']
 )

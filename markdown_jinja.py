@@ -16,10 +16,9 @@ class MarkdownJinja(Extension):
         for key, value in configs.items():
             self.setConfig(key, value)
 
-    def extendMarkdown(self, md, md_globals):
-        md.preprocessors.add(
-            'jinja', JinjaPreprocessor(md, self.getConfigs()), '_begin'
-        )
+    def extendMarkdown(self, md):
+        jinja = JinjaPreprocessor(md, self.getConfigs())
+        md.preprocessors.register(jinja, 'jinja', 25)
 
 
 class JinjaPreprocessor(Preprocessor):
